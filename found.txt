@@ -1,0 +1,40 @@
+yash@fedora:~/UNH/testcases$ ls -l
+total 24
+-rw-r--r--. 2 yash yash 22 Mar 20 00:12 hard_link_test1
+lrwxrwxrwx. 1 yash yash  9 Mar 20 00:47 soft_link_test2 -> test2.txt
+lrwxrwxrwx. 1 yash yash  9 Mar 20 00:48 soft_link_test3 -> test3.txt
+-rw-r--r--. 2 yash yash 22 Mar 20 00:12 test1.txt
+-rw-r--r--. 1 yash yash 31 Mar 19 23:37 test2.txt
+-rw-r--r--. 1 yash yash 31 Mar 19 23:49 test3.txt
+
+Program Execution:
+
+ -------------------------------------------
+	 Argument: Trump
+	 Argument: Biden
+	 Argument: Obama
+	 Argument: Bush
+	 Argument: Clinton
+	 Argument: Reagan
+ -------------------------------------------
+
+Command: sniff --verbose --ignore -o found.txt --dir /home/yash/UNH/testcases/ Trump Biden Obama Bush Clinton Reagan 
+Start at: /home/yash/UNH/testcases/
+Output file name: found.txt
+Verbose? Yes
+Ignore case? Yes
+Current working directory: /home/yash/UNH/testcases
+test2.txt
+test3.txt
+test1.txt
+Biden was successfully added to sniffWordArr
+biden is already in there
+test1.txt with the sniffword was added to the susFiles list
+hard_link_test1
+Biden was successfully added to sniffWordArr
+biden is already in there
+hard_link_test1 with the sniffword was added to the susFiles list
+soft_link_test2
+soft_link_test3
+
+Normal termination.
