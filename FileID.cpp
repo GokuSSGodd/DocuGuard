@@ -1,23 +1,35 @@
 #include "FileID.hpp"
 #include "Printer.hpp"
 
-FileID::FileID(string fileName, int iNode, string pathName):fileName(fileName),iNode(iNode),pathName(pathName){
+FileID::FileID(string fileName, int iNode, string pathName) : fileName(fileName), iNode(iNode), pathName(pathName), flag(false)
+{
 }
 
-void FileID::print(ostream& out){
+void FileID::print(ostream &out)
+{
   Printer::writeln(to_string(iNode), out);
   Printer::writeln(pathName, out);
 }
 
-void FileID::insertSniffWord(string& sniffWord){
-  flag = false;
-  int cnt = count(sniffWordsArr.begin(), sniffWordsArr.end(), sniffWord);
-  if (cnt <= 0){
-    sniffWordsArr.push_back(sniffWord);
+void FileID::insertSniffWord(string &sniffWord, bool isSensitive)
+{
+  int cnt{};
+  if (!isSensitive)
+    cnt = count(sniffWordsArr.begin(), sniffWordsArr.end(), sniffWord);
+  else
+  {
+    for (string str : sniffWordsArr)
+      if (caseInsensitiveEquals(sniffWord, str))
+        cnt++;
   }
-  else{
+  if (cnt <= 0)
+  {
+    sniffWordsArr.push_back(sniffWord);
+    Printer::writeln(sniffWord + " was successfully added to sniffWordArr", cout);
+  }
+  else
+  {
     Printer::write(sniffWord + " is already in there\n", cout);
-    flag=true;
+    flag = true;
   }
 }
-
