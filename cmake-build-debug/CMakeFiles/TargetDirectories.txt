@@ -1,0 +1,3 @@
+C:/Users/murta/CLionProjects/Program 2 - Sys Prog/cmake-build-debug/CMakeFiles/untitled1.dir
+C:/Users/murta/CLionProjects/Program 2 - Sys Prog/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/murta/CLionProjects/Program 2 - Sys Prog/cmake-build-debug/CMakeFiles/rebuild_cache.dir
