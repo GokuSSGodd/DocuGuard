@@ -13,7 +13,7 @@ private:
     ofstream file;
     static Printer instance; //instance
 public:
-    static void getControl(ofstream out){ instance.file = move(out); }
+    static void getControl(ofstream&& out){ instance.file = move(out); }
     static void write(const string& message , ostream& out); //write to the file and defined ostream
     static void writeln(const string& message , ostream& out); //write to the file and defined ostream
 };
