@@ -1,14 +1,3 @@
-yash@fedora:~/UNH/testcases$ ls -l
-total 24
--rw-r--r--. 2 yash yash 22 Mar 20 00:12 hard_link_test1
-lrwxrwxrwx. 1 yash yash  9 Mar 20 00:47 soft_link_test2 -> test2.txt
-lrwxrwxrwx. 1 yash yash  9 Mar 20 00:48 soft_link_test3 -> test3.txt
--rw-r--r--. 2 yash yash 22 Mar 20 00:12 test1.txt
--rw-r--r--. 1 yash yash 31 Mar 19 23:37 test2.txt
--rw-r--r--. 1 yash yash 31 Mar 19 23:49 test3.txt
-
-Program Execution:
-
  -------------------------------------------
 	 Argument: Trump
 	 Argument: Biden
@@ -18,23 +7,89 @@ Program Execution:
 	 Argument: Reagan
  -------------------------------------------
 
-Command: sniff --verbose --ignore -o found.txt --dir /home/yash/UNH/testcases/ Trump Biden Obama Bush Clinton Reagan 
-Start at: /home/yash/UNH/testcases/
+Command: sniff --verbose --ignore -o found.txt --dir /home/yash/UNH/ Trump Biden Obama Bush Clinton Reagan 
+Start at: /home/yash/UNH/
 Output file name: found.txt
 Verbose? Yes
 Ignore case? Yes
-Current working directory: /home/yash/UNH/testcases
-test2.txt
-test3.txt
-test1.txt
+testcases
+Visiting: /home/yash/UNH/testcases
 Biden was successfully added to sniffWordArr
 biden is already in there
 test1.txt with the sniffword was added to the susFiles list
-hard_link_test1
 Biden was successfully added to sniffWordArr
 biden is already in there
 hard_link_test1 with the sniffword was added to the susFiles list
-soft_link_test2
+Trump was successfully added to sniffWordArr
+Trump is already in there
+soft_link_test3 with the sniffword was added to the susFiles list
+Trump was successfully added to sniffWordArr
+Trump is already in there
+test3.txt with the sniffword was added to the susFiles list
+
+
+Results of travel: 
+---------------------------------------------
+20274
+/home/yash/UNH/testcases
+test1.txt
+---------------------------------------------
+Biden
+---------------------------------------------
+20274
+/home/yash/UNH/testcases
+hard_link_test1
+---------------------------------------------
+Biden
+---------------------------------------------
+20714
+/home/yash/UNH/testcases
 soft_link_test3
+---------------------------------------------
+Trump
+---------------------------------------------
+27936
+/home/yash/UNH/testcases
+test3.txt
+---------------------------------------------
+Trump
+Folder2
+Visiting: /home/yash/UNH/Folder2
+Obama was successfully added to sniffWordArr
+Obama is already in there
+helo.txt with the sniffword was added to the susFiles list
+
+
+Results of travel: 
+---------------------------------------------
+20274
+/home/yash/UNH/testcases
+test1.txt
+---------------------------------------------
+Biden
+---------------------------------------------
+20274
+/home/yash/UNH/testcases
+hard_link_test1
+---------------------------------------------
+Biden
+---------------------------------------------
+20714
+/home/yash/UNH/testcases
+soft_link_test3
+---------------------------------------------
+Trump
+---------------------------------------------
+27936
+/home/yash/UNH/testcases
+test3.txt
+---------------------------------------------
+Trump
+---------------------------------------------
+28440
+/home/yash/UNH/Folder2
+helo.txt
+---------------------------------------------
+Obama
 
 Normal termination.
