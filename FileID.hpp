@@ -3,24 +3,22 @@
 
 using namespace std;
 
-class FileID
-{
+class FileID {
 private:
   string fileName;
   int iNode;
   string pathName;
   vector<string> sniffWordsArr;
   bool flag;
-
 public:
   FileID(string fileName, int iNodeNumber, string pathName);
-  void print(ostream &out);
-  void insertSniffWord(string &, bool);
-  bool flagStatus() { return flag; }
+  void print(ostream& out);
+  void insertSniffWord(string&, bool);
+  bool flagStatus() const{return flag;}
+  [[nodiscard]] vector<string>& getSniffWords(){return sniffWordsArr;}
 };
 
-inline ostream &operator<<(ostream &out, FileID &fileID)
-{
+inline ostream& operator<<(ostream& out, FileID& fileID) {
   fileID.print(out);
   return out;
 }
